@@ -1,0 +1,92 @@
+#ccc{
+   margin-left: 47%;
+    line-height: 50px;
+    
+    }
+    #ccc4{
+      margin-left: 44%;
+       line-height: 50px;
+       
+       }
+    #ccc3{
+      margin-left: 45%;
+      line-height: 50px;
+      }
+    #ccc2 {
+      color: #232323;
+      font-size: 20px;
+      margin-bottom: 0px;
+      text-transform: capitalize;
+      width: 100%;
+      font-weight: 700;
+  }
+  #forpadding2 {
+    padding-right: 20px;
+    color: #e52d27;
+    font-weight: 600;
+}
+#forpadding {
+  padding-right: 55px;
+}
+.foo
+{
+    margin-left: 80px;
+}
+.foo2
+{
+    margin-left: 78px;
+}
+    #confirm, #delete{
+        background-color:#4267B2;
+        color:white;
+        
+        width: 100px;
+        height: 50px;
+        Align-Items: center;
+        Justify-Content: centre;
+        text-align: center;
+        border-radius:2px;
+        margin-right:10px;
+        font-family:sans-serif;
+      
+      }
+      #confirm2, #delete2{
+        background-color:#4267B2;
+        color:white;
+        
+        width: 100px;
+        height: 50px;
+        Align-Items: center;
+        Justify-Content: centre;
+        border-radius:2px;
+        margin-right:10px;
+        font-family:sans-serif;
+        text-align: center;
+      }
+      .center {
+
+
+        position: absolute;
+      
+      
+        left: 50%;
+      
+      
+        top: 50%;
+      
+      
+        transform: translate(-50%, -50%);
+      
+      
+      }
+      .player-wrapper {
+        position: relative;
+        padding-top: 36.25%;
+        margin-left: 20%; /* Player ratio: 100 / (1280 / 720) */
+      }
+      
+      .react-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
