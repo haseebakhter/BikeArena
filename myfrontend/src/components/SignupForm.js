@@ -16,8 +16,7 @@ function SignupForm() {
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
-    const handleChange=(e)=>{
-        e.preventDefault()
+    const handleChange=()=>{
         console.log("EMail in signup form",email)
         const data = new FormData() 
         data.append('file', selectedfile)
@@ -27,7 +26,18 @@ function SignupForm() {
         data.set("lname", lname);
         data.set("address", address);
          if (fname=="" || lname==""|| email=="" || address=="" ){
-                setError("one or more is field is empty") 
+                if(fname==""){
+                    setError("First name is empty")
+                }
+                if(lname==""){
+                    setError("Last name is empty")
+                }
+                if(email==""){
+                    setError("Email is empty")
+                }
+                if(address==""){
+                    setError("Address is empty")
+                }
          }else{
             if(validateEmail(email)){
                 console.log(email+ ": Email true")
@@ -70,7 +80,7 @@ function SignupForm() {
     }
     useEffect(()=>{
         
-    })
+    },[])
     return (
         <div>
             <form>
@@ -105,7 +115,7 @@ function SignupForm() {
                 </div>
                 
 
-                <button type="submit" onClick={handleChange} className="btn btn-primary btn-block">Sign Up</button>
+                <button type="submit" onClick={e => {e.preventDefault();handleChange()}} className="btn btn-primary btn-block">Sign Up</button>
                 <p className="forgot-password text-right">
                     Already registered <a href="/sign-in">sign in?</a>
                 </p>

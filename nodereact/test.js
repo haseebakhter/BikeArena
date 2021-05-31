@@ -543,7 +543,8 @@ app.post('/sign-up',upload, function (req, res) {
   console.log(req.files[0].filename)
   console.log("CountValue is", countValue.email, countValue.fname, countValue.lname);
   db.collection('details').findOne({email:countValue.email},function(err,user){
-    if(user) return res.status(400).send({ auth : false, message :"Email Already Exits"});
+    console.log(user)
+    if(user) return res.send({ auth : false, message :"Email Already Exits"});
   
   bcrypt.hash(req.body.pass, saltRounds, async (err, hash) => {
   var data = { 
@@ -560,18 +561,18 @@ app.post('/sign-up',upload, function (req, res) {
     
 
 
-
+ 
 } 
 console.log("HashedPwd: ", hash)
   db.collection('details').insertOne(data,function(err, collection){ 
     if (err) throw err; 
     console.log("Record inserted Successfully"); 
-    res.status(400).send({ auth : true, message :"You are now a user please login"});
+    return res.send({ auth : true, message :"You are now a user please login"});
           
 }); 
 });
 });
-
+ 
 });
 
   app.post('/adminsign-in', function (req, res) {
