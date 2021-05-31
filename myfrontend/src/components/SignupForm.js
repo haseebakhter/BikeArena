@@ -26,37 +26,42 @@ function SignupForm() {
         data.set("fname", fname);
         data.set("lname", lname);
         data.set("address", address);
-        if(validateEmail(email)){
-            console.log(email+ ": Email true")
-            const URL = "http://localhost:5000/sign-up";
-            axios.post(URL,data)
-            .then((response) => {
-                console.log("Response is ",response.data.message)
-                if(response.data.auth){
-                    setError(null)
-                    setSuccess(response.data.message)
-                }else{
-                    setError(response.data.message)
-                }
-            }).catch((error) => {
-
-            });
-        
-        
-        
-        }else{
-            console.log(email+ ": Email false")
-            setError("Wrong Email Format")
-        }
-        //i will authenticate user
-        
-        
-        
-        
-        
-        
-        
-    }
+         if (fname=="" || lname==""|| email=="" || address=="" ){
+                setError("one or more is field is empty") 
+         }else{
+            if(validateEmail(email)){
+                console.log(email+ ": Email true")
+                const URL = "http://localhost:5000/sign-up";
+                axios.post(URL,data)
+                .then((response) => {
+                    console.log("Response is ",response.data.message)
+                    if(response.data.auth){
+                        setError(null)
+                        setSuccess(response.data.message)
+                    }else{
+                        setError(response.data.message)
+                    }
+                }).catch((error) => {
+    
+                });
+            
+            
+            
+            }else{
+                console.log(email+ ": Email false")
+                setError("Wrong Email Format")
+            }
+            //i will authenticate user
+            
+            
+            
+            
+            
+            
+            
+        } 
+         }
+       
     const onIMGChangeHandler=(event)=>{
 
         console.log(event.target.files[0])
