@@ -1,0 +1,11 @@
+export const BikeParts=["Accessories",
+"Bicycle",
+"Body",
+"Brakes & Suspension",
+"Engine",
+"Exhaust",
+"Gloves",
+"Helmets",
+"Other Parts",
+"Seats",
+"Tyres & Wheels"]
